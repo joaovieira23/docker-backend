@@ -1,6 +1,6 @@
 #DOCKER API
 
-A docker REST API to manage docker on a server remotely
+Uma API REST do docker para gerenciar o docker em um servidor remotamente
 
 ## INSTALLATION
 
@@ -13,18 +13,18 @@ $ NODE_PORT=8080 npm start
 
 ### GET
 * `/hello` : ping api
-* `/free-port` : get free port on server
-* `/containers` : get list of containers
-* `/images` : get list of images
+* `/free-port` : obter uma porta livre no servidor
+* `/containers` : obter lista de contêineres
+* `/images` : obter lista de imagens
 
 ### POST
-* `/images` : create a new image
-    * **name** : image name
-* `/containers/run` : run a container with docker file configuration
-    * **name** : name of container (optional)
-    * /!\ body have to be a json file
+* `/images` : criar uma nova imagem
+    * **name** : nome da imagem
+* `/containers/run` : executar um contêiner com configuração de arquivo docker
+    * **name** : Nome do container (opcional)
+    * /!\ body tem que ser um arquivo json
 
-Body example :
+Body exemplo
 ```
 {
     Image: 'node:6',
@@ -39,12 +39,12 @@ Body example :
 }
 
 ```
-* `/containers/<id>/start` : start a container by id
-* `/containers/<id>/stop` : stop a container by id
-* `/containers/<id>/kill` : kill a container by id
+* `/containers/<id>/start` : start container pelo id
+* `/containers/<id>/stop` : parar o container pelo id
+* `/containers/<id>/kill` : finalizar o container pelo id
 
 ### DELETE
-* `/images/<name>` : delete an image by name
-    * **force** : force delete (optional, default: false)
-    * **noprune** : (optional, default: false)
-* `/containers/<id>` : delete a container by id
+* `/images/<name>` : deletar a imagem pelo nome
+    * **force** : forcar exclusao (opcional, default: false )
+    * **noprune** : (opcional, default: false )
+* `/containers/<id>` : deletar um container pelo id
